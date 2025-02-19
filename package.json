@@ -1,8 +1,9 @@
 {
-  "name": "node-red-project",
-  "dependencies": {
-    "node-red-dashboard": "*",
-    "node-red-node-mysql": "*"
-  }
+  "name": "node-red-app",
+  "version": "1.0.0",
+  "description": "Node-RED on Railway",
+  "scripts": {
+    "start": "node-red"
+  },
+  "dependencies": {}
 }
-
