@@ -1,8 +1,15 @@
-FROM nodered/node-red:latest
+# Gunakan image Node-RED terbaru
+FROM nodered/node-red:latest  
 
+# Set direktori kerja
 WORKDIR /data
-COPY package.json .
-RUN npm install --only=production
 
-EXPOSE 1880
-CMD ["npm", "start", "--", "--userDir", "/data"]
+# Salin semua file yang dibutuhkan
+COPY package.json .
+COPY entrypoint.sh /entrypoint.sh
+
+# Beri izin eksekusi untuk entrypoint
+RUN chmod +x /entrypoint.sh
+
+# Jalankan entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
