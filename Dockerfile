@@ -1,15 +1,14 @@
-# Gunakan image Node-RED terbaru
+# Gunakan image Node-RED terbaru sebagai base image
 FROM nodered/node-red:latest  
 
 # Set direktori kerja
 WORKDIR /data
 
-# Salin semua file yang dibutuhkan
+# Salin file package.json
 COPY package.json .
-COPY entrypoint.sh /entrypoint.sh
 
-# Beri izin eksekusi untuk entrypoint
-RUN chmod +x /entrypoint.sh
+# Salin file entrypoint.sh dan langsung berikan izin eksekusi
+COPY --chmod=+x entrypoint.sh /entrypoint.sh
 
 # Jalankan entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
