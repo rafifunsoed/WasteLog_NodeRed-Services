@@ -7,8 +7,9 @@ WORKDIR /data
 # Salin file package.json
 COPY package.json .
 
-# Salin file entrypoint.sh dan langsung berikan izin eksekusi
-COPY --chmod=+x entrypoint.sh /entrypoint.sh
+# Salin file entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
 
 # Jalankan entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
