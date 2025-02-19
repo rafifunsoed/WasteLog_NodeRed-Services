@@ -7,9 +7,8 @@ WORKDIR /data
 # Salin file package.json
 COPY package.json .
 
-# Salin file entrypoint.sh
+# Salin file entrypoint.sh tanpa chmod
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod 755 /entrypoint.sh
 
-# Jalankan entrypoint
-ENTRYPOINT ["/entrypoint.sh"]
+# Jalankan entrypoint menggunakan shell langsung
+CMD ["sh", "/entrypoint.sh"]
