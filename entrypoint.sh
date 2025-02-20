@@ -1,3 +1,3 @@
 #!/bin/sh
 set -e
-npm start
+npm start -- --settings /data/settings.js
