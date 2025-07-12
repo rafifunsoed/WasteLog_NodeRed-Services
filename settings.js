@@ -1,5 +1,4 @@
 module.exports = {
-    // Bagian yang sudah ada sebelumnya
     adminAuth: {
         type: "credentials",
         users: [{
