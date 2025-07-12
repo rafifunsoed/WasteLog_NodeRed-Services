@@ -9,7 +9,6 @@ module.exports = {
         }]
     },
 
-    // --- TAMBAHAN BARU DI SINI ---
     // Mengaktifkan penyimpanan context ke file di disk
     contextStorage: {
         default: {
